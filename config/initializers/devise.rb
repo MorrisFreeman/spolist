@@ -9,7 +9,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '158d1b90ac4e5ab8a4d8663c44dc1023e3e3b38bc2c90b8d1aca77888453f0a73829f96ac7da626993c2183c738544d8628322d5958215b5f44a559a8ac7ad66'
-  
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -287,4 +287,7 @@ Devise.setup do |config|
   # ActiveSupport.on_load(:devise_failure_app) do
   #   include Turbolinks::Controller
   # end
+
+  config.omniauth :twitter, ENV['TWITTER_API_KEY'], ENV['TWITTER_API_SECRET'], callback_url: "http://127.0.0.1:3000/auth/twitter/callback", scope: 'email', info_fields: 'email, name'
+
 end
