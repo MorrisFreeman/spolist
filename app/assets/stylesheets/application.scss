@@ -1,6 +1,106 @@
 @import "bootstrap";
 @import "toastr";
 
+body {
+  color: #565a5c;
+  background-color: #f8f8f8;
+  font-family: "Verela Round", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+a {
+  color: #00a699;
+}
+
+.container {
+  width: 80%;
+}
+
+.text-babu, .icon-babu {
+  color: #00a699;
+}
+
+// NAVBAR
+.navbar-default {
+  background-color: #ffffff;
+}
+
+.navbar-default .navbar-brand {
+  color: #ff5a5f;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.navbar-default .navbar-nav a {
+  color: #777777;
+}
+
+// BUTTONS
+.btn-block {
+  display: block;
+  white-space: normal;
+  width: 100%;
+}
+
+.btn {
+  color: #ffffff;
+  border-radius: 0.3rem;
+  font-weight: bold;
+  padding: 0.5rem 1.7rem;
+}
+
+.btn-small {
+  padding: 0.3rem 1rem;
+  margin-top: 1rem;
+}
+
+.btn:hover, .btn:focus {
+  color: #ffffff;
+}
+
+.btn.btn-default {
+  width: 100%;
+  border-color: #c4c4c4;
+  background: #ffffff;
+  color: #484848;
+  border-radius: 0.125rem;
+  padding: 0.625rem 0;
+  margin-top: 0.625rem;
+}
+
+.btn.btn-normal {
+  border: 0.0625rem solid #ff5a5f;
+  background-color: #ff5a5f;
+}
+
+.btn.btn-normal:active {
+  outline: none;
+  border-color: #e00007;
+  background-color: #e00007;
+}
+
+.btn.btn-form {
+  border: 0.0625rem solid #00a699;
+  background-color: #00a699;
+}
+
+.btn.btn-form:active {
+  outline: none;
+  border-color: #066165;
+  background-color: #066165;
+}
+
+.btn.btn-twitter {
+  border: 0.0625rem solid #385998;
+  background-color: #385998;
+}
+
+.btn.btn-twitter:active {
+  outline: none;
+  border-color: #2d467b;
+  background-color: #2d467b;
+}
+
+// AVATAR
 .avatar-small {
   width: 1.75rem;
 }

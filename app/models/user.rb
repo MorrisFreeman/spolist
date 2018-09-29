@@ -13,12 +13,6 @@ class User < ApplicationRecord
   		user
   	else
 			where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-        p "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-        p "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-        p auth.info
-        p "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-        p "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-		    # user.email = auth.info.email
         user.email = auth.info.email.nil? ? auth.provider + auth.uid + "@login.function" : auth.info.email
 		    user.password = Devise.friendly_token[0,20]
 		    user.name = auth.info.name
