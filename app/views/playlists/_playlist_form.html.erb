@@ -1,0 +1,35 @@
+<!-- Button to Open the Modal -->
+<button type="button" class="btn btn-form btn-small" data-toggle="modal" data-target="#myModal">
+  Add Your Playlist
+</button>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add Your Playlist</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <%= form_for  (playlist = current_user.playlists.build) do |f| %>
+          <div class="form-group text-center">
+            <%= f.text_area :content, rows: 3, class: "form-control" %>
+          </div>
+          <%= fields_for playlist.tags.build do |tag| %>
+            <div class="form-group text-center">
+              <%= tag.text_field :content, class: "form-control" %>
+            </div>
+          <% end %>
+          <div class="text-center">
+            <%= f.submit "Add Playlist", class: "btn btn-normal" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   						controllers: {omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations'}
 
   resources :users, only: [:show]
+  resources :playlists, only: [:show, :new, :create, :destroy]
 
 end
