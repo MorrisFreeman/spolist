@@ -1,12 +1,19 @@
 <% playlists.each do |playlist| %>
   <div class="col-md-4 col-sm-12">
-    <div class="card card-playlist">
+    <div class="card card-playlist mb-2">
       <div class="card">
         <div class="card-header">
           <%= playlist.user.name %>
         </div>
         <div class="card-body">
           <iframe src="https://open.spotify.com/embed/user/spotify/playlist/<%= playlist.content %>" class="frame-playlist" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+        <div class="card-footer">
+            <% playlist.tags.each do |tag| %>
+              <span class="tag">
+                <%= tag.content %>
+              </span>
+            <% end %>
         </div>
       </div>
     </div>

@@ -108,13 +108,25 @@ a {
   font-weight: 400;
 }
 
+.card .card-footer {
+  color: #ffffff;
+}
+
+.card .card-footer .tag {
+  background-color: #00a699;
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-right: 0.5rem;
+  padding: 0.3rem 0.5rem;
+}
+
 .card-playlist .card-body {
   padding: 0;
-  height: 380px;
+  height: 300px;
 }
 
 .frame-playlist {
-  height: 80%;
+  height: 100%;
   width: 100%;
 }
 
