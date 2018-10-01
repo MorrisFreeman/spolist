@@ -11,6 +11,7 @@ gem 'dotenv-rails'
 gem "font-awesome-rails"
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
+gem 'kaminari'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'puma', '~> 3.11'

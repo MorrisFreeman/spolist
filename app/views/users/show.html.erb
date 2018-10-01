@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row mb-3">
   <div class="col-md-3">
     <div class="center">
       <%= image_tag avatar_url(@user), class: "avatar-full" %>
@@ -14,4 +14,7 @@
     <div class="description row-space-3">
     </div>
   </div>
+</div>
+<div id="playlists">
+  <%= render partial: "playlists/playlist_list", locals: {playlists: @playlists} %>
 </div>

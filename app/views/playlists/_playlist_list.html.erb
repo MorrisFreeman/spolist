@@ -1,3 +1,4 @@
+<div class="row">
 <% playlists.each do |playlist| %>
   <div class="col-md-4 col-sm-12">
     <div class="card card-playlist mb-2">
@@ -28,3 +29,7 @@
     </div>
   </div>
 <% end %>
+</div>
+<div class="playlist-pagenate">
+  <%= paginate playlists %>
+</div>

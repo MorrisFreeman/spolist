@@ -6,10 +6,15 @@ body {
   color: #565a5c;
   background-color: #f8f8f8;
   font-family: "Verela Round", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  padding-top: 90px;
 }
 
 a {
   color: #00a699;
+}
+
+.modal-backdrop {
+  z-index: 1020;
 }
 
 .container {
@@ -221,4 +226,8 @@ a {
   color: #565a5c;
   font-weight: bold;
   text-decoration: none;
+}
+
+.playlist-pagenate {
+  margin: 3rem auto;
 }

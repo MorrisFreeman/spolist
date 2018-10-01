@@ -18,11 +18,11 @@
       <div class="modal-body">
         <%= form_for  (playlist = current_user.playlists.build) do |f| %>
           <div class="form-group text-center">
-            <%= f.text_area :content, rows: 3, class: "form-control" %>
+            <%= f.text_area :content, rows: 3,placeholder: "playlist id", class: "form-control" %>
           </div>
           <%= fields_for playlist.tags.build do |tag| %>
             <div class="form-group text-center">
-              <%= tag.text_field :content, class: "form-control" %>
+              <%= tag.text_field :content, placeholder: "ex) edm,american,woman", class: "form-control" %>
             </div>
           <% end %>
           <div class="text-center">
