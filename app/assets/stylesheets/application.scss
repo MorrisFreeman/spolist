@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "toastr";
+@import "font-awesome";
 
 body {
   color: #565a5c;
@@ -108,18 +109,34 @@ a {
   font-weight: 400;
 }
 
-.card .card-footer {
+.card .card-header a {
   color: #ffffff;
 }
 
+.card .card-header a:hover {
+  color: #c4c4c4;
+  text-decoration: none;
+}
+
+.card .card-footer {
+  background-color: #c4c4c4;
+}
+
 .card .card-footer .tag {
+  color: #ffffff;
   background-color: #00a699;
-  font-size: 1.125rem;
-  font-weight: 400;
   margin-right: 0.5rem;
   padding: 0.3rem 0.5rem;
 }
 
+.card .card-footer .tag a {
+  color: #ffffff;
+}
+
+.card .card-footer .tag a:hover {
+  color: #c4c4c4;
+  text-decoration: none;
+}
 .card-playlist .card-body {
   padding: 0;
   height: 300px;

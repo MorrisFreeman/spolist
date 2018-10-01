@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   resources :playlists, only: [:show, :new, :create, :destroy]
+  resources :tags, only: [:create, :destroy]
 
 end

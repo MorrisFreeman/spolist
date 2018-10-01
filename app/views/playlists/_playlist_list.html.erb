@@ -3,15 +3,24 @@
     <div class="card card-playlist mb-2">
       <div class="card">
         <div class="card-header">
-          <%= playlist.user.name %>
+          <%= link_to user_path(playlist.user) do %>
+            <%= image_tag avatar_url(playlist.user), class: "rounded-circle avatar-small" %>
+            <%= playlist.user.name %>
+          <% end %>
+          <%= link_to playlist_path(playlist), remote: true, method: :delete, data: {confirm: "Are you sure?"} do %>
+            <%= fa_icon "trash", class: "float-right" if current_user == playlist.user %>
+          <% end %>
         </div>
         <div class="card-body">
           <iframe src="https://open.spotify.com/embed/user/spotify/playlist/<%= playlist.content %>" class="frame-playlist" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
         <div class="card-footer">
             <% playlist.tags.each do |tag| %>
-              <span class="tag">
+              <span class="tag" id="tag_<%=tag.id %>">
                 <%= tag.content %>
+                <%= link_to tag_path(tag), remote: true, method: :delete do %>
+                  <%= fa_icon "times" if current_user == playlist.user %>
+                <% end %>
               </span>
             <% end %>
         </div>
