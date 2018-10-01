@@ -8,6 +8,9 @@
             <%= image_tag avatar_url(playlist.user), class: "rounded-circle avatar-small" %>
             <%= playlist.user.name %>
           <% end %>
+          <%= link_to favorite_path(playlist), remote: true, method: :post do %>
+            <%= fa_icon "heart", class: "float-right" if user_signed_in? && current_user != playlist.user %>
+          <% end %>
           <%= link_to playlist_path(playlist), remote: true, method: :delete, data: {confirm: "Are you sure?"} do %>
             <%= fa_icon "trash", class: "float-right" if current_user == playlist.user %>
           <% end %>

@@ -1,13 +1,28 @@
 class User < ApplicationRecord
   attr_accessor :current_password
   has_many :playlists, dependent: :destroy
+  has_many :favorites
+  has_many :favorite_playlists, through: :favorites, source: :playlist
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :confirmable, :omniauthable
+         :omniauthable
 
   validates :name, presence: true, length: { maximum: 50 }
+
+  def add_favorite(playlist)
+    favorite_playlists << playlist
+  end
+
+  def delete_favorite(playlist)
+    favorites.find_by(playlist_id: playlist.id).destroy
+  end
+
+  def favorite?(playlist)
+    favorite_playlists.include?(playlist)
+  end
 
   def self.from_omniauth(auth)
   	user = User.where(email: auth.info.email).first
