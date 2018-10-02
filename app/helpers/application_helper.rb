@@ -7,4 +7,20 @@ module ApplicationHelper
       "https://www.gravatar.com/avatar/#{gravatar_id}.jpg?d=identical&s=150"
     end
   end
+
+  def display_favorite(playlist)
+    result = ''
+    if current_user.favorite?(playlist)
+      result = 'no-display'
+    end
+    result
+  end
+
+  def display_unfavorite(playlist)
+    result = ''
+    unless current_user.favorite?(playlist)
+      result = 'no-display'
+    end
+    result
+  end
 end

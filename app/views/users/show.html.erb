@@ -15,6 +15,13 @@
     </div>
   </div>
 </div>
+<hr/>
 <div id="playlists">
+  <h2>Your Playlists</h2>
   <%= render partial: "playlists/playlist_list", locals: {playlists: @playlists} %>
+</div>
+<hr/>
+<div id="favoritelists">
+  <h2>Your Favorite Playlists</h2>
+  <%= render partial: "playlists/playlist_list", locals: {playlists: current_user.favorite_playlists.page(params[:page]).per(6)} %>
 </div>

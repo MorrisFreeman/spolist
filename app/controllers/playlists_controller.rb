@@ -18,7 +18,7 @@ class PlaylistsController < ApplicationController
   def destroy
     @playlist = Playlist.find(params[:id])
     @playlist.destroy
-    @playlists = Playlist.all
+    @playlists = Playlist.all.page(params[:page]).per(9)
     respond_to :js
   end
 
