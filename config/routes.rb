@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :playlists, only: [:show, :new, :create, :destroy]
   resources :tags, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]
+
+  get 'search', to: 'pages#search'
 end

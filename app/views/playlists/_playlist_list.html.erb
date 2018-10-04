@@ -1,7 +1,7 @@
 <div class="row">
   <% playlists.each do |playlist| %>
-    <div class="col-md-4">
-      <div class="card card-playlist mb-2" id="playlist_<%= playlist.id %>">
+    <div class="col-md-6 col-xl-4">
+      <div class="card card-playlist mb-5" id="playlist_<%= playlist.id %>">
         <div class="card-header">
           <%= link_to user_path(playlist.user) do %>
             <%= image_tag avatar_url(playlist.user), class: "rounded-circle avatar-small" %>
@@ -31,6 +31,9 @@
                 <% end %>
               </span>
             <% end %>
+            <span class="">
+              <%= fa_icon "plus", class: "tag float-right" if current_user == playlist.user %>
+            </span>
         </div>
       </div>
     </div>

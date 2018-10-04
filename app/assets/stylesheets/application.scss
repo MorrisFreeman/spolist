@@ -26,6 +26,14 @@ a {
 }
 
 // NAVBAR
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(196,196,196, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler {
+  border-color: rgb(196,196,196);
+}
+
 .navbar-default {
   background-color: #ffffff;
 }
@@ -57,6 +65,10 @@ a {
 .btn-small {
   padding: 0.3rem 1rem;
   margin-top: 1rem;
+}
+
+#add_playlist_button {
+  margin-top: 0;
 }
 
 .btn:hover, .btn:focus {
@@ -96,8 +108,8 @@ a {
 }
 
 .btn.btn-twitter {
-  border: 0.0625rem solid #385998;
-  background-color: #385998;
+  border: 0.0625rem solid #1DA1F2;
+  background-color: #1DA1F2;
 }
 
 .btn.btn-twitter:active {
@@ -125,13 +137,18 @@ a {
 
 .card .card-footer {
   background-color: #c4c4c4;
+  padding: 0.3rem 0.3rem;
 }
 
 .card .card-footer .tag {
+  display: inline-block;
+  font-size: 0.8rem;
   color: #ffffff;
   background-color: #00a699;
-  margin-right: 0.5rem;
-  padding: 0.3rem 0.5rem;
+  margin-right: 0.3rem;
+  margin-bottom: 0.2rem;
+  padding: 0.3rem 0.3rem;
+  border-radius: 0.3rem;
 }
 
 .card .card-footer .tag a {

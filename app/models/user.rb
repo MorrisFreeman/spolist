@@ -1,13 +1,14 @@
 class User < ApplicationRecord
   attr_accessor :current_password
   has_many :playlists, dependent: :destroy
-  has_many :favorites
-  has_many :favorite_playlists, through: :favorites, source: :playlist
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_playlists, through: :favorites, source: :playlist, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
+         # :confirmable,
          :omniauthable
 
   validates :name, presence: true, length: { maximum: 50 }
@@ -27,7 +28,7 @@ class User < ApplicationRecord
   def self.from_omniauth(auth)
   	user = User.where(email: auth.info.email).first
   	if user
-  		user
+      user
   	else
 			where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.email = auth.info.email.nil? ? auth.provider + auth.uid + "@login.function" : auth.info.email
@@ -39,7 +40,7 @@ class User < ApplicationRecord
 
 		    # If you are using confirmable and the provider(s) you use validate emails,
 		    # uncomment the line below to skip the confirmation emails.
-		    user.skip_confirmation!
+		    # user.skip_confirmation!
 		  end
   	end
 	end
